@@ -63,8 +63,8 @@ spec:
         repoUrl: ${{ parameters.repoUrl }}
         repoVisibility: 'public'
         collaborators:
-          user: ${{ parameters.github_username }}
-          access: 'admin'
+          - user: ${{ parameters.github_username }}
+            access: 'admin'
 
     - id: register
       name: Register
