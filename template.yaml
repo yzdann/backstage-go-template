@@ -33,6 +33,16 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
+    - title: Add a member
+        required:
+          - github_username
+      properties:
+        github_username:
+          title: Username
+          type: string
+          description: Github username that you want to add as a member to the repo
+          ui:autofocus: true
+
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
@@ -52,6 +62,9 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
         repoVisibility: 'public'
+        collaborators:
+          user: ${{ parameters.github_username }}
+          access: 'admin'
 
     - id: register
       name: Register
