@@ -34,8 +34,8 @@ spec:
             allowedHosts:
               - github.com
     - title: Add a member
-        required:
-          - github_username
+      required:
+        - github_username
       properties:
         github_username:
           title: Username
